@@ -6,7 +6,6 @@ set -euxo pipefail
 pip install Django==5.0.6
 
 # Bootstraps the django codebase
-rm -rf snapstagram || true # just in case it exist
 django-admin startproject snapstagram
 
 # Libraries needed by DRF
@@ -31,4 +30,7 @@ cat <<EOF >> ~/.zsh_history
 : 1719583423:0;python manage.py startapp post
 : 1719583423:0;python manage.py makemigrations
 : 1719583423:0;python manage.py test
+: 1719583423:0;python manage.py migrate
 EOF
+
+# Adding migrate as the first one so thats the first command in the history
