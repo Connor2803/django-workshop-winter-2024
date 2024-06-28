@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  # Used for Local development only
+  mailhog:
+    container_name: mailhog
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "8025:8025" # HTTP Port
+      - "1025:1025" # SMTP Port
