@@ -6,7 +6,10 @@ set -euxo pipefail
 pip install Django==5.0.6
 
 # Bootstraps the django codebase
-django-admin startproject snapstagram
+# only if folder doesnt exist
+if [ ! -d "snapstagram" ]; then
+    django-admin startproject snapstagram
+fi
 
 # Libraries needed by DRF
 # As per https://www.django-rest-framework.org/#installation
